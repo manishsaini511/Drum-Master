@@ -10,12 +10,15 @@
         
        makeSound(buttonInnerHtml);
 
+       buttonAnimation(buttonInnerHtml);
+
     } );
 }
           // Detecting  keyboard Press 
 
           document.addEventListener("keypress" , function (event) {
               makeSound(event.key);
+              buttonAnimation(buttonInnerHtml);
           });
 
 
@@ -59,4 +62,10 @@
             default: console.log(key);
                 break;
         }
+         }
+
+         function buttonAnimation(currentKey) {
+          var activeButton = document.querySelector("." + currentKey);
+          activeButton.classList.add("pressed");
+          
          }
